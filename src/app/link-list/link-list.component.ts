@@ -19,7 +19,7 @@ export class LinkListComponent implements OnInit {
   unitSubject: Subject<any>;
   cls: string;
   unit: number;
-  // sortByProperty: function;
+  // sortByProperty: functionasfa;
 
   constructor(af: AngularFire) {
 
