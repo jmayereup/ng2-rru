@@ -1,0 +1,48 @@
+<body>
+
+  <header id="header">
+    <div id="logo">
+      <h1>RRU-ILC</h1>
+   
+    <button (click)="filterBy(1, 'English 1')">English 1</button>
+    <button (click)="filterBy(1, 'English 2')">English 2</button>
+    <button (click)="filterBy(1, 'English 3')">English 3</button>
+    <button (click)="filterBy(1, 'Other')">Reference</button>
+    <button (click)="filterBy(1, 'Teacher')">Teacher</button>
+     </div>
+  </header>
+
+  <nav id="nav">
+    <div class="innertube">
+      <h2>Units</h2>
+      <ul *ngFor="let u of units | async">
+        <li *ngIf="u.unitCls == cls">
+         <p><button (click)='filterBy(u.unit, u.unitCls)'>Open</button>{{u.unitName}}</p>
+        </li>
+      </ul>
+      <h1>Heading</h1>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+        <li><a href="#">Link 3</a></li>
+        <li><a href="#">Link 4</a></li>
+        <li><a href="#">Link 5</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <div class="innertube">
+      <h4>Links</h4>
+      <ul *ngFor="let l of links | async">
+        <li *ngIf="l.clsName == cls && l.unit == unit">
+          {{l.unit}} - {{ l.title}}
+          <div [innerHTML]="l.description"></div>
+        </li>
+      </ul>
+
+    </div>
+  </main>
+
+
+</body>
